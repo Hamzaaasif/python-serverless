@@ -7,10 +7,9 @@ import pymysql
 DB_USER=os.getenv('DB_USER') or 'root'
 DB_PSWD=os.getenv('DB_PSWD') or 'root'
 DB_NAME=os.getenv('DB_NAME') or 'task_logger'
-DB_HOST=os.getenv('DB_HOST') or '127.0.0.1'
-DB_PORT=os.getenv('DB_PORT') or 3306
+DB_HOST=os.getenv('DB_HOST') or '34.133.103.199'
 
-db = pymysql.connect(host=DB_HOST, port= DB_PORT,
+db = pymysql.connect(host=DB_HOST,
 										 user=DB_USER, 
 										 password=DB_PSWD, 
 										 database=DB_NAME, 
@@ -130,3 +129,5 @@ elif method == 'PUT':
 print("Status: %d %s" % (resp[1], get_status_msg(resp[1])))
 print("Content-type: application/json\n")
 print(json.dumps(resp[0]))
+
+
